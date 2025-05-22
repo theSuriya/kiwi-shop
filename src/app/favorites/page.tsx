@@ -31,7 +31,7 @@ export default function FavoritesPage() {
             Looks like you haven't added any products to your favorites.
           </p>
           <Link href="/products" passHref legacyBehavior>
-            <Button size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground transition-colors">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors">
               <ShoppingBag className="mr-2 h-5 w-5" /> Start Shopping
             </Button>
           </Link>

@@ -170,7 +170,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
             </div>
           </div>
 
-          <Button type="submit" size="lg" className="w-full mt-8 bg-accent hover:bg-accent/90 text-accent-foreground transition-colors py-3 text-base">
+          <Button type="submit" size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors py-3 text-base">
             Complete Purchase
           </Button>
         </form>

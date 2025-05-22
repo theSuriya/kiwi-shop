@@ -32,7 +32,7 @@ export default function HomePage() {
             Discover top-tier sports equipment and apparel. KwikShop Sports brings you the best in quality and performance.
           </p>
           <Link href="/products" passHref legacyBehavior>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-accent hover:bg-accent/90 text-accent-foreground transition-transform transform hover:scale-105">
+            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-transform transform hover:scale-105">
               Shop Now
             </Button>
           </Link>

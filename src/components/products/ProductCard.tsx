@@ -77,9 +77,9 @@ export default function ProductCard({ product }: ProductCardProps) {
           aria-pressed={favoriteStatus}
           className={cn(
             "w-full sm:w-auto transition-colors flex items-center gap-2",
-            favoriteStatus ? "text-destructive border-destructive hover:border-accent hover:bg-accent/10" : "hover:bg-accent/10"
+            favoriteStatus ? "text-destructive border-destructive hover:border-secondary hover:bg-secondary" : ""
           )}
-          disabled={!isLoaded} // This is important
+          disabled={!isLoaded} 
         >
           <Heart size={18} className={cn(favoriteStatus && "fill-destructive")} /> 
           {favoriteStatus ? 'Favorited' : 'Favorite'}
