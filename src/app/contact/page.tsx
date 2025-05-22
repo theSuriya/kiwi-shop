@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -131,7 +132,7 @@ export default function ContactPage() {
                   </FormItem>
                 )}
               />
-              <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors py-3 text-base">
+              <Button type="submit" size="lg" className="w-full bg-accent text-accent-foreground hover:bg-accent/90 transition-colors py-3 text-base">
                 <Send className="mr-2 h-5 w-5"/> Send Message
               </Button>
             </form>

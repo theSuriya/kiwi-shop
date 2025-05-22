@@ -9,96 +9,96 @@ body {
 
 @layer base {
   :root {
-    --background: 45 100% 98%; /* Very light, slightly warm off-white (Linen) */
-    --foreground: 220 20% 20%; /* Deep, cool gray for strong text contrast */
+    --background: 35 50% 97%; /* Light, warm beige (Soft Sand) */
+    --foreground: 30 30% 25%; /* Dark, earthy brown (Rich Soil) */
 
-    --card: 0 0% 100%; /* Pure white for cards to pop */
-    --card-foreground: 220 20% 22%; /* Slightly lighter than main foreground for card text */
+    --card: 40 60% 99%; /* Very light, slightly warmer off-white */
+    --card-foreground: 30 30% 28%; /* Slightly lighter brown for card text */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 22%;
+    --popover: 40 60% 99%;
+    --popover-foreground: 30 30% 28%;
 
-    --primary: 210 80% 55%; /* Vibrant, trustworthy blue */
-    --primary-foreground: 0 0% 100%; /* White */
+    --primary: 160 50% 40%; /* Deep, muted teal (Forest Teal) */
+    --primary-foreground: 40 60% 99%; /* Light beige/off-white for text on primary */
 
-    --secondary: 210 70% 94%; /* Very light blue, for subtle backgrounds or highlights */
-    --secondary-foreground: 210 80% 40%; /* Darker blue for text on secondary */
+    --secondary: 150 40% 92%; /* Very light, muted teal/mint (Mint Tint) */
+    --secondary-foreground: 160 50% 30%; /* Darker teal for text on secondary */
 
-    --muted: 210 40% 96%; /* Slightly blue-ish light gray */
-    --muted-foreground: 210 25% 50%; /* Softer gray text */
+    --muted: 40 30% 95%; /* Light beige-gray (Stone Gray) */
+    --muted-foreground: 35 20% 55%; /* Softer, muted brown-gray text */
 
-    --accent: 10 90% 60%; /* Vibrant, warm coral/orange, good for CTAs */
-    --accent-foreground: 0 0% 100%; /* White, for high contrast on the accent color */
+    --accent: 30 70% 60%; /* Warm terracotta/burnt orange (Terracotta) */
+    --accent-foreground: 0 0% 100%; /* White, for high contrast on accent */
 
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 60% 50%; /* Slightly more muted red */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 30% 90%; /* Slightly softer border */
-    --input: 210 30% 92%; /* Slightly lighter input background */
-    --ring: 210 80% 55%; /* Matches new primary */
+    --border: 35 30% 88%; /* Softer, earthy border */
+    --input: 35 40% 93%; /* Slightly warmer input background */
+    --ring: 160 50% 45%; /* Matches new primary, slightly lighter for focus */
 
     --radius: 0.5rem;
 
     /* Sidebar colors - adapt to main theme */
-    --sidebar-background: 210 60% 97%; /* Very light blue */
-    --sidebar-foreground: 220 20% 25%; /* Matches main foreground */
-    --sidebar-primary: 210 80% 55%; /* Matches main primary */
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 10 90% 65%; /* Slightly lighter version of main accent */
+    --sidebar-background: 35 45% 95%; /* Slightly darker beige for sidebar */
+    --sidebar-foreground: 30 30% 22%; /* Matches main foreground */
+    --sidebar-primary: 160 50% 40%; /* Matches main primary */
+    --sidebar-primary-foreground: 40 60% 99%;
+    --sidebar-accent: 30 70% 65%; /* Slightly lighter terracotta */
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 210 30% 88%;
-    --sidebar-ring: 210 80% 55%;
+    --sidebar-border: 35 30% 85%;
+    --sidebar-ring: 160 50% 45%;
 
-    --chart-1: 12 76% 61%;
-    --chart-2: 173 58% 39%;
-    --chart-3: 197 37% 24%;
-    --chart-4: 43 74% 66%;
-    --chart-5: 27 87% 67%;
+    --chart-1: 160 60% 50%; /* Teal */
+    --chart-2: 30 65% 55%;  /* Terracotta variant */
+    --chart-3: 90 40% 50%;  /* Muted Olive Green */
+    --chart-4: 40 50% 60%;  /* Soft Ochre */
+    --chart-5: 200 30% 60%; /* Muted Sky Blue */
   }
 
   .dark {
-    --background: 220 20% 10%; /* Dark blue-gray */
-    --foreground: 210 30% 95%; /* Light gray */
+    --background: 30 20% 10%; /* Dark, earthy brown (Dark Soil) */
+    --foreground: 35 30% 92%; /* Light beige-gray (Light Stone) */
 
-    --card: 220 20% 15%;
-    --card-foreground: 210 30% 95%;
+    --card: 30 20% 15%; /* Slightly lighter dark brown for cards */
+    --card-foreground: 35 30% 92%;
 
-    --popover: 220 20% 15%;
-    --popover-foreground: 210 30% 95%;
+    --popover: 30 20% 15%;
+    --popover-foreground: 35 30% 92%;
 
-    --primary: 210 80% 65%; /* Lighter blue for dark mode */
-    --primary-foreground: 220 20% 5%; /* Darker text on light blue */
+    --primary: 160 50% 55%; /* Lighter, but still rich teal for dark mode */
+    --primary-foreground: 30 20% 98%; /* Very light, almost white */
 
-    --secondary: 220 20% 20%;
-    --secondary-foreground: 210 30% 95%;
+    --secondary: 150 30% 20%; /* Darker muted teal/mint */
+    --secondary-foreground: 150 40% 85%; /* Lighter teal text */
 
-    --muted: 220 20% 22%;
-    --muted-foreground: 210 30% 75%;
+    --muted: 30 15% 22%; /* Darker beige-gray */
+    --muted-foreground: 35 25% 75%; /* Lighter muted brown-gray */
 
-    --accent: 10 90% 65%; /* Slightly lighter coral for dark mode */
+    --accent: 30 70% 65%; /* Slightly lighter terracotta for dark mode */
     --accent-foreground: 0 0% 10%; /* Dark text for accent */
 
-    --destructive: 0 70% 50%;
+    --destructive: 0 60% 55%; /* Slightly lighter red for dark mode */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 220 20% 25%;
-    --input: 220 20% 25%;
-    --ring: 210 80% 65%;
+    --border: 30 20% 25%;
+    --input: 30 20% 25%;
+    --ring: 160 50% 60%; /* Lighter ring for dark mode */
 
-    --sidebar-background: 220 20% 8%;
-    --sidebar-foreground: 210 30% 93%;
-    --sidebar-primary: 210 80% 65%;
-    --sidebar-primary-foreground: 220 20% 3%;
-    --sidebar-accent: 10 90% 55%; 
+    --sidebar-background: 30 20% 8%;
+    --sidebar-foreground: 35 30% 90%;
+    --sidebar-primary: 160 50% 55%;
+    --sidebar-primary-foreground: 30 20% 98%;
+    --sidebar-accent: 30 70% 60%; 
     --sidebar-accent-foreground: 0 0% 100%;
-    --sidebar-border: 220 20% 20%;
-    --sidebar-ring: 210 80% 65%;
+    --sidebar-border: 30 20% 20%;
+    --sidebar-ring: 160 50% 60%;
     
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
+    --chart-1: 160 50% 60%;
+    --chart-2: 30 70% 70%;
+    --chart-3: 90 40% 65%;
+    --chart-4: 40 50% 70%;
+    --chart-5: 200 30% 70%;
   }
 }
 
@@ -130,4 +130,22 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: hsl(var(--primary));
+}
+
+/* Subtle fade-in for elements, can be applied with a class */
+@keyframes gentle-fade-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-gentle-fade-in {
+  animation: gentle-fade-in 0.5s ease-out forwards;
+}
+
+/* Example of a subtle pulse for attention, if needed */
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .9; }
+}
+.animate-subtle-pulse {
+  animation: subtle-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

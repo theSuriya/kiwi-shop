@@ -7,7 +7,7 @@ import { Heart, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Product } from '@/types';
-import { useFavorites } from '@/contexts/FavoritesContext'; // Updated import
+import { useFavorites } from '@/contexts/FavoritesContext'; 
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -22,7 +22,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const handleFavoriteToggle = (e: React.MouseEvent) => {
     e.preventDefault(); 
     e.stopPropagation();
-    if (!isLoaded) { // Extra check, though button should be disabled
+    if (!isLoaded) { 
       toast({ title: "Favorites still loading", description: "Please try again in a moment.", variant: "default" });
       return;
     }
@@ -38,7 +38,7 @@ export default function ProductCard({ product }: ProductCardProps) {
   const favoriteStatus = isLoaded && isFavorite(product.id);
 
   return (
-    <Card className="overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.03] flex flex-col h-full rounded-lg border">
+    <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 ease-out transform hover:-translate-y-1.5 hover:scale-[1.02] flex flex-col h-full rounded-lg border">
       <Link href={`/products/${product.id}`} className="block group" aria-label={`View details for ${product.name}`}>
         <CardHeader className="p-0">
           <div className="aspect-[4/3] overflow-hidden relative">
@@ -47,7 +47,7 @@ export default function ProductCard({ product }: ProductCardProps) {
               alt={product.name}
               width={400}
               height={300}
-              className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-300 ease-out"
+              className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-300 ease-out"
               data-ai-hint={product.dataAiHint || product.category.toLowerCase()}
             />
           </div>
@@ -77,7 +77,7 @@ export default function ProductCard({ product }: ProductCardProps) {
           aria-pressed={favoriteStatus}
           className={cn(
             "w-full sm:w-auto transition-colors flex items-center gap-2",
-            favoriteStatus ? "text-destructive border-destructive hover:border-secondary hover:bg-secondary" : ""
+            favoriteStatus ? "text-destructive border-destructive hover:bg-destructive/10 hover:text-destructive" : "hover:bg-secondary hover:text-secondary-foreground"
           )}
           disabled={!isLoaded} 
         >

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -90,7 +91,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
               <FormItem>
                 <FormLabel className="flex items-center"><User className="mr-2 h-4 w-4 text-muted-foreground" />Full Name</FormLabel>
                 <FormControl>
-                  <Input placeholder="John Doe" {...field} className="py-3"/>
+                  <Input placeholder="John Doe" {...field} className="py-3 text-sm"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -103,7 +104,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
               <FormItem>
                 <FormLabel className="flex items-center"><Home className="mr-2 h-4 w-4 text-muted-foreground" />Shipping Address</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="123 Main St, Anytown, USA" {...field} className="min-h-[100px] py-3"/>
+                  <Textarea placeholder="123 Main St, Anytown, USA" {...field} className="min-h-[100px] py-3 text-sm"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -116,7 +117,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
               <FormItem>
                 <FormLabel className="flex items-center"><Phone className="mr-2 h-4 w-4 text-muted-foreground" />Phone Number</FormLabel>
                 <FormControl>
-                  <Input type="tel" placeholder="+1234567890" {...field} className="py-3"/>
+                  <Input type="tel" placeholder="+1234567890" {...field} className="py-3 text-sm"/>
                 </FormControl>
                 <FormMessage />
               </FormItem>
@@ -133,13 +134,13 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
                   <FormItem>
                     <FormLabel>Card Number</FormLabel>
                     <FormControl>
-                      <Input placeholder="0000 0000 0000 0000" {...field} className="py-3"/>
+                      <Input placeholder="0000 0000 0000 0000" {...field} className="py-3 text-sm"/>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 xs:grid-cols-2 gap-4">
                 <FormField
                   control={form.control}
                   name="expiryDate"
@@ -147,7 +148,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
                     <FormItem>
                       <FormLabel>Expiry Date</FormLabel>
                       <FormControl>
-                        <Input placeholder="MM/YY" {...field} className="py-3"/>
+                        <Input placeholder="MM/YY" {...field} className="py-3 text-sm"/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -160,7 +161,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
                     <FormItem>
                       <FormLabel>CVV</FormLabel>
                       <FormControl>
-                        <Input placeholder="123" {...field} className="py-3"/>
+                        <Input placeholder="123" {...field} className="py-3 text-sm"/>
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -170,7 +171,7 @@ export default function CheckoutForm({ productId }: CheckoutFormProps) {
             </div>
           </div>
 
-          <Button type="submit" size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-colors py-3 text-base">
+          <Button type="submit" size="lg" className="w-full mt-8 bg-accent text-accent-foreground hover:bg-accent/90 transition-colors py-3 text-base">
             Complete Purchase
           </Button>
         </form>

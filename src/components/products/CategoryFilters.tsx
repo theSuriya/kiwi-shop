@@ -1,3 +1,4 @@
+
 "use client";
 
 import { Button } from '@/components/ui/button';
@@ -22,8 +23,7 @@ export default function CategoryFilters({ selectedCategory, onSelectCategory }: 
           onClick={() => onSelectCategory(category)}
           className={cn(
             "transition-all duration-200 ease-in-out transform hover:scale-105",
-            selectedCategory === category ? "bg-primary text-primary-foreground shadow-md" : "bg-card" 
-            // hover:bg-accent hover:text-accent-foreground removed as 'outline' variant now handles light blue hover
+            selectedCategory === category ? "bg-primary text-primary-foreground shadow-md" : "bg-card hover:bg-secondary hover:text-secondary-foreground" 
           )}
         >
           {category === null ? 'All Products' : category}

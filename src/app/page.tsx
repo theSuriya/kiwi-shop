@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-r from-primary to-blue-600 text-primary-foreground py-20 md:py-32 rounded-xl shadow-2xl overflow-hidden">
+      <section className="relative bg-gradient-to-br from-primary via-primary/80 to-secondary text-primary-foreground py-20 md:py-32 rounded-xl shadow-2xl overflow-hidden">
         <div className="absolute inset-0 opacity-10">
             <Image src="https://placehold.co/1200x600.png" alt="Abstract sports background" layout="fill" objectFit="cover" data-ai-hint="sports stadium abstract" />
         </div>
@@ -32,7 +32,7 @@ export default function HomePage() {
             Discover top-tier sports equipment and apparel. KwikShop Sports brings you the best in quality and performance.
           </p>
           <Link href="/products" passHref legacyBehavior>
-            <Button size="lg" variant="secondary" className="text-lg px-8 py-6 bg-accent text-accent-foreground hover:bg-secondary hover:text-secondary-foreground transition-transform transform hover:scale-105">
+            <Button size="lg" variant="default" className="text-lg px-8 py-6 bg-accent text-accent-foreground hover:bg-accent/90 transition-transform transform hover:scale-105">
               Shop Now
             </Button>
           </Link>
@@ -54,8 +54,8 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {categories.map((category) => (
               <Link key={category.name} href={`/products?category=${category.name}`} className="block group">
-                <div className="relative bg-card p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:scale-[1.03] overflow-hidden">
-                  <div className="absolute inset-0 opacity-10 group-hover:opacity-25 transition-opacity duration-300">
+                <div className="relative bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1.5 hover:scale-[1.02] overflow-hidden">
+                  <div className="absolute inset-0 opacity-5 group-hover:opacity-15 transition-opacity duration-300">
                      <Image src={`https://placehold.co/400x300.png`} alt={`${category.name} category background`} layout="fill" objectFit="cover" data-ai-hint={category.dataAiHint} />
                   </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
