@@ -1,7 +1,8 @@
+
 "use client";
 
 import ProductCard from '@/components/products/ProductCard';
-import { useFavorites } from '@/hooks/useFavorites';
+import { useFavorites } from '@/contexts/FavoritesContext'; // Updated import
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { HeartCrack, ShoppingBag } from 'lucide-react';

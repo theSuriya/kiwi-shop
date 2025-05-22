@@ -7,7 +7,7 @@ import { Heart, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import type { Product } from '@/types';
-import { useFavorites } from '@/hooks/useFavorites';
+import { useFavorites } from '@/contexts/FavoritesContext'; // Updated import
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 
@@ -20,8 +20,12 @@ export default function ProductCard({ product }: ProductCardProps) {
   const { toast } = useToast();
 
   const handleFavoriteToggle = (e: React.MouseEvent) => {
-    e.preventDefault(); // Prevent link navigation if card is wrapped in Link
+    e.preventDefault(); 
     e.stopPropagation();
+    if (!isLoaded) { // Extra check, though button should be disabled
+      toast({ title: "Favorites still loading", description: "Please try again in a moment.", variant: "default" });
+      return;
+    }
     if (isFavorite(product.id)) {
       removeFavorite(product.id);
       toast({ title: `${product.name} removed from favorites.` });
@@ -75,7 +79,7 @@ export default function ProductCard({ product }: ProductCardProps) {
             "w-full sm:w-auto transition-colors flex items-center gap-2",
             favoriteStatus ? "text-destructive border-destructive hover:border-accent hover:bg-accent/10" : "hover:bg-accent/10"
           )}
-          disabled={!isLoaded}
+          disabled={!isLoaded} // This is important
         >
           <Heart size={18} className={cn(favoriteStatus && "fill-destructive")} /> 
           {favoriteStatus ? 'Favorited' : 'Favorite'}

@@ -1,3 +1,4 @@
+
 "use client";
 
 import { useEffect, useState } from 'react';
@@ -7,7 +8,7 @@ import { getProductById } from '@/lib/products';
 import type { Product, ProductColor } from '@/types';
 import { Button } from '@/components/ui/button';
 import { Heart, ShoppingCart, ArrowLeft, Check } from 'lucide-react';
-import { useFavorites } from '@/hooks/useFavorites';
+import { useFavorites } from '@/contexts/FavoritesContext'; // Updated import
 import { useToast } from '@/hooks/use-toast';
 import { Separator } from '@/components/ui/separator';
 import { Badge } from '@/components/ui/badge';
@@ -34,8 +35,7 @@ export default function ProductDetailPage() {
         setSelectedColor(defaultCol);
         setCurrentImage(defaultCol?.image || fetchedProduct.image);
       } else {
-        // Handle product not found, e.g., redirect or show error
-        router.push('/products'); // or a 404 page
+        router.push('/products'); 
       }
     }
   }, [params.id, router]);
@@ -49,11 +49,11 @@ export default function ProductDetailPage() {
   }, [selectedColor, product]);
 
 
-  if (!product) {
+  if (!product || !favoritesLoaded) { // Ensure favorites are loaded before rendering actions
     return <div className="container mx-auto px-4 py-8 text-center">Loading product details...</div>;
   }
 
-  const favoriteStatus = favoritesLoaded && isFavorite(product.id);
+  const favoriteStatus = isFavorite(product.id);
 
   const handleFavoriteToggle = () => {
     if (favoriteStatus) {
@@ -79,7 +79,7 @@ export default function ProductDetailPage() {
       <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-start">
         <ProductImageGallery 
           productName={product.name}
-          defaultImage={currentImage || product.image} // Use currentImage which might be color-specific
+          defaultImage={currentImage || product.image}
           additionalImages={product.images}
           dataAiHint={product.dataAiHint || product.category.toLowerCase()}
         />
@@ -106,14 +106,6 @@ export default function ProductDetailPage() {
             />
           )}
           
-          {/* Mock Variant Selector for sizes, if needed in future */}
-          {/* <VariantSelector
-            label="Available Sizes"
-            variants={[{id: 's', name: 'S'}, {id: 'm', name: 'M'}, {id: 'l', name: 'L'}]}
-            selectedVariantId={'m'}
-            onSelectVariant={(id) => console.log('Size selected:', id)}
-          /> */}
-
           <Separator />
 
           <div className="flex flex-col sm:flex-row gap-3 pt-2">
@@ -132,7 +124,7 @@ export default function ProductDetailPage() {
                 favoriteStatus ? "text-destructive border-destructive hover:bg-destructive/10" : "hover:bg-accent/10"
               )}
               onClick={handleFavoriteToggle}
-              disabled={!favoritesLoaded}
+              disabled={!favoritesLoaded} // This check is good
               aria-pressed={favoriteStatus}
             >
               <Heart className={cn("mr-2 h-5 w-5", favoriteStatus && "fill-destructive")} /> 
