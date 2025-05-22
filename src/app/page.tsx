@@ -1,9 +1,10 @@
+
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import FeaturedProductsSection from '@/components/products/FeaturedProductsSection';
 import { getFeaturedProducts } from '@/lib/products';
 import type { ProductCategory } from '@/types';
-import { Footprints, Zap, Shield, Award } from 'lucide-react'; // Using Zap for Football, Shield for Basketball, Award for Tennis as placeholders
+import { Footprints, Zap, Shield, Award } from 'lucide-react'; 
 import Image from 'next/image';
 
 const categories: { name: ProductCategory; icon: React.ElementType; description: string, dataAiHint: string }[] = [
@@ -53,12 +54,12 @@ export default function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {categories.map((category) => (
               <Link key={category.name} href={`/products?category=${category.name}`} className="block group">
-                <div className="relative aspect-video bg-card p-6 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1 overflow-hidden">
-                  <div className="absolute inset-0 opacity-5 group-hover:opacity-10 transition-opacity">
+                <div className="relative bg-card p-6 rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 ease-in-out transform hover:-translate-y-2 hover:scale-[1.03] overflow-hidden">
+                  <div className="absolute inset-0 opacity-10 group-hover:opacity-25 transition-opacity duration-300">
                      <Image src={`https://placehold.co/400x300.png`} alt={`${category.name} category background`} layout="fill" objectFit="cover" data-ai-hint={category.dataAiHint} />
                   </div>
                   <div className="relative z-10 flex flex-col items-center text-center">
-                    <category.icon className="h-12 w-12 text-primary mb-4 transition-transform group-hover:scale-110" />
+                    <category.icon className="h-12 w-12 text-primary mb-4 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-3deg]" />
                     <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors">{category.name}</h3>
                     <p className="text-sm text-muted-foreground">{category.description}</p>
                   </div>
